@@ -1,0 +1,12 @@
+
+<div class="form-group card" *ngIf="crisis">
+    <h3>{{ editName }}</h3>
+    <p>Id: {{ crisis.id }}</p>
+    <label class="form-label" for="crisis-name">Crisis name: </label>
+    <input class="form-control" type="text" id="crisis-name" [(ngModel)]="editName" placeholder="name"/>
+    <div class="buttons">
+      <button class="btn btn-outline-secondary" type="button" (click)="save(crisis)">Update</button>
+      <button class="btn btn-danger" type="button" (click)="cancel()">Cancel</button>
+
+    </div>
+  </div>

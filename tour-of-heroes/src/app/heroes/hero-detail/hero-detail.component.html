@@ -1,0 +1,25 @@
+<h2>Heroes</h2>
+
+
+
+<div class="form-group card" *ngIf="hero as value; else noHero">
+
+    <div class= "card-body">
+      <h3>{{ value.name }}</h3>
+      <p>Id: {{ value.id }}</p>
+      <label class="form-label" for="hero-name">Hero name: </label>
+      <input class="form-control" type="text" id="hero-name" [(ngModel)]="value.name"  placeholder="name"/>
+      <div class="button">
+        <button class="btn btn-outline-secondary" type="button" (click)="gotoHeroes(value)">Back</button>
+      </div>
+    </div >
+
+</div>
+<ng-template #noHero>
+  <div class="mb-3">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <h1>El Hero no existe</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="close()"></button>
+    </div>
+</div>
+ </ng-template>

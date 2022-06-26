@@ -1,0 +1,12 @@
+<h2>Admin</h2>
+<div class="menu">
+    <nav>
+        <a routerLink="./adminDash" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">Dashboard</a>
+        <a routerLink="./crises" routerLinkActive="active">Manage Crises</a>
+        <a routerLink="./heroes" routerLinkActive="active">Manage Heroes</a>
+      </nav>
+</div>
+<div class="childMenu">
+    <router-outlet></router-outlet>
+</div>
+

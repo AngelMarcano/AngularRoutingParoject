@@ -1,0 +1,13 @@
+<p>manage-crisis works!</p>
+<div class="container-fluid">
+  <form [formGroup]="crisisForm" (ngSubmit)="SaveCrisis()">
+    <div class="form-group">
+      <span>Crisis Name</span>
+      <input class="form-control" type="text" formControlName="crisisName">
+    </div>
+    <div class="form-group from-top-div">
+      <button [disabled]="!crisisForm.valid" type="submit" class="btn btn-outline-secondary">Save</button>
+      <button class="btn btn-danger" type="button" (click)="goToCrisis()">Cancel</button>
+    </div>
+  </form>
+</div>

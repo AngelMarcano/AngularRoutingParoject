@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" #email placeholder="name@example.com">
+    </div>
+    <div class="row">
+        <div class="mb-3 col-auto ">
+            <button class="btn btn-outline-secondary buttons" type="button" *ngIf="!authService.isLoggedIn" (click)="login(email.value)">Login</button>
+            <button class="btn btn-outline-secondary buttons" type="button" *ngIf="authService.isLoggedIn" (click)="logOut()">Log Out</button>
+        </div>
+    </div>
+   
+    <div [ngSwitch]="isLoggedMessage">
+        <div class="mb-3" *ngSwitchCase = "1">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <h2>El usuario: {{userResult.username}} está registrado </h2>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="close()"></button>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div *ngSwitchCase="2"  class="alert alert-danger alert-dismissible fade show" role="alert">
+                <h1>El usuario no se encuentra registrado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="close()"></button>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div *ngSwitchCase="3"  class="alert alert-warning alert-dismissible fade show" role="alert">
+                <h1>Ingrese el Email del usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="close()"></button>
+            </div>
+        </div>
+    </div>
+</div>

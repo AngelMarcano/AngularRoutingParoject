@@ -1,0 +1,21 @@
+
+  <div>
+    <h2>Crisis Center</h2>
+    <ul class="crises">
+        <li *ngFor="let crisis of crisisList" [class.selected]="crisis.id === selectedId" (click)="onSelected(crisis)" >
+          <a [routerLink]="[crisis.id]">
+            <!--El nombre del parámetro pasado al router link de forma dinámica es id
+            Este parámetro se puede recuperar a traves de la subscripcion de this.route.paramMap  -->
+            <span class="badge">{{ crisis.id }}</span>{{ crisis.name }}
+          </a>
+        </li>
+      </ul>
+      <div >
+
+      </div>
+  </div>
+  <!--The router outlet serves as a placeholder where the routed components are rendered. -->
+  <div>
+    <router-outlet ></router-outlet>
+  </div>
+  
